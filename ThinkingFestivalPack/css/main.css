@@ -26,7 +26,6 @@ li {
     list-style-type: disc;
     margin-left: 20px;
     padding-bottom: 10px;
-    bo
 }
 
 p {
@@ -66,7 +65,7 @@ a:hover {
     text-align: center;
     color: #EDE9DF;
     font-variant: small-caps;
-    font-family: "Futura";
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;;
     font-size: 18px;
 }
 
@@ -76,7 +75,7 @@ a:hover {
 }
 
 h1, h2, h3, h4 {
-    font-family: "Futura";
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .maincontentheader {
