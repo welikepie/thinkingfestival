@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" >
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Thinking Festival</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/styles.css">
+
+
+
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a href="#"><h1><span class="hidden">Logo text</span></h1></a>
+				<nav>
+					<a href="index.html">Speakers</a>
+					<a href="fringe.html">Fringe</a>
+					<a href="workshops.html">Workshops</a>
+					<a href="where.html">Where</a>
+					<a href="tickets.html">Tickets</a>
+				</nav>
+				<h1 class="hero mini"><span class="hidden">Hero image</span></h1>
+			</header>
+			<div class="content">
+				<article class="intro">
+					<p>To kick off the Festival, we’ve put together a series of half-day and full-day workshops focusing on important and useful skills. All workshops are going ahead on the 19th of March.</p>
+				</article>
+				<article class="fringe-event">
+					<h1><span>Workshops</span></h1>
+					
+					<section class="bio">
+						<h2>Usability Testing</h2>
+						<div class="image_wrapper">
+							<img src="./images/nick.png">
+						</div>
+						<h3>Usability Testing How-To's (For Small Teams &amp; Little Budgets) with Evgenia Grinblo. </h3>
+						<p>A full-day workshop taught by UX Specialist Evgenia Grinblo. Usability testing is a crucial part of the process of designing digital products but is often over-looked due to time &amp; money constraints. With Evgenia, you can learn how to test a products usability without great expense.</p>
+
+					</section>
+				</article>
+				<article class="fringe-event">
+					
+					<section class="bio">
+						<h2>Games Design</h2>
+						<div class="image_wrapper">
+							<img src="./images/zoe.png">
+						</div>
+						<h3>Games Design and Iteration at High Speed with James Wallis</h3>
+						<P>Learning how to work with paper prototypes to iterate the project quickly can save you days. In this workshop James Wallis will teach you to create and flesh out a concept for a simple multi-user system, build a working prototype, watch as other people test it and critique it, and use that criticism to rework the design towards a finished product. All with a gamey twist, you'll be conceptualising and building your own game!</p>
+					</section>
+				</article>
+				<article class="fringe-event">
+					
+					<section class="bio">
+						<h2>Design Modelling</h2>
+						<div class="image_wrapper">
+							<img src="./images/sjors.png">
+						</div>
+						<h3>Design Modelling with Jude Pullen</h3>
+						<p>We've teamed up with Sugru's chief engineer, Jude Pullen, to do a half-day 'design modelling' workshop. One of Judes' passions is cardboard modelling; working from the sketch up to build a prototype out of cardboard. Prototyping is a great way to communicate an idea and in this workshop you'll learn to turn your ideas into final working protypes.</p>
+					</section>
+				</article>
+				
+			</div>
+
+		</div>
+	</body>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+
+
+			<script>
+			var elementClassName = "marquee"; //class name of element to apply translations
+var multiplier = 5; //number of times to replicate text
+var updatesPerSecond = 30 //updatesPerSecond;
+var moveDistancePerTick = 1; //pixel distance to move per tick
+var margin_left=30; /* Add any left-margin applied to list items here */
+
+var contents = document.getElementsByClassName(elementClassName)[0].innerHTML;
+for(var i = 0; i < multiplier-1; i++){
+	document.getElementsByClassName(elementClassName)[0].innerHTML+= contents;
+}
+
+
+setInterval(function(){
+	var toMove = document.getElementsByClassName(elementClassName)[0];
+	if(parseInt(toMove.style.left.substring(0,toMove.style.left.length-2),10)*-1 >= (toMove.children[0].offsetWidth+margin_left)){
+		var toAppend = toMove.children[0];
+		toMove.removeChild(toAppend);
+		toMove.appendChild(toAppend);
+		toMove.style.left = (moveDistancePerTick*-1)+"px";
+	}
+	else{
+		toMove.style.left = (toMove.offsetLeft - moveDistancePerTick) +"px";
+	}
+}, 1000/updatesPerSecond);
+
+
+
+function getOffset(el) {
+    var _x = 0;
+    var _y = 0;
+    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+        _x += el.offsetLeft - el.scrollLeft;
+        _y += el.offsetTop - el.scrollTop;
+        el = el.offsetParent;
+    }
+    return { top: _y, left: _x };
+}
+
+// masonry
+
+var container = document.querySelector('#container');
+var msnry = new Masonry( container, {
+  // options...
+  itemSelector: '.item',
+  columnWidth: 480
+});
+
+		</script>
+</html>
